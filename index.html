@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>反認知作戰教育資源網</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="css/stylesheet.css?v=1.3">
+    <link rel="stylesheet" href="css/nav-bamian.css?v=1">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>反認知作戰教育資源網</h1>
+            <p>了解認知戰威脅，建立資訊免疫力，守護民主價值</p>
+            <div class="nav-tabs">
+                <button class="nav-tab active" data-target="translation">重要學術資料</button>
+                <button class="nav-tab" data-target="analysis">綜合分析</button>
+                <button class="nav-tab" data-target="videos">影片資源</button>
+                <button class="nav-tab" data-target="books">參考書籍</button>
+                <button class="nav-tab" data-target="bamian">2025大罷免</button>
+            </div>
+        </div>
+
+        <!-- 重要學術資料區塊 -->
+        <div id="translation" class="content-section active">
+        </div>
+
+        <!-- 綜合分析區塊 -->
+        <div id="analysis" class="content-section">
+        </div>
+
+        <!-- 影片資源區塊 -->
+        <div id="videos" class="content-section">
+        </div>
+
+        <!-- 參考書籍區塊 -->
+        <div id="books" class="content-section">
+        </div>
+
+        <!-- 2025大罷免區塊 -->
+        <div id="bamian" class="content-section">
+        </div>
+    </div>
+
+    <script>
+    $(document).ready(function() {
+        
+        // 禁用 jQuery AJAX 緩存
+        $.ajaxSetup({
+            cache: false
+        });
+        
+        // 從 URL 獲取錨點，決定要載入哪個頁面
+        function getAnchorFromUrl() {
+            var hash = window.location.hash;
+            if (hash) {
+                return hash.substring(1); // 移除 # 符號
+            }
+            return 'translation'; // 預設頁面
+        }
+        
+        // 載入指定頁面
+        function loadPage(target) {
+            var filename = 'nav-' + target + '.html';
+            // 加上時間戳避免緩存
+            var timestamp = new Date().getTime();
+            var url = filename + '?v=' + timestamp;
+            
+            $('#' + target).load(url, function(response, status, xhr) {
+                if (status == "error") {
+                    $('#' + target).html('<p>載入失敗：' + xhr.status + ' ' + xhr.statusText + '</p>');
+                }
+            });
+        }
+        
+        // 切換到指定頁面
+        function switchToPage(target) {
+            // 移除所有 active 類別
+            $('.nav-tab').removeClass('active');
+            $('.content-section').removeClass('active');
+            
+            // 添加 active 類別到對應的標籤和內容
+            $('.nav-tab[data-target="' + target + '"]').addClass('active');
+            $('#' + target).addClass('active');
+            
+            // 載入頁面內容
+            loadPage(target);
+            
+            // 更新 URL 錨點
+            window.location.hash = '#' + target;
+        }
+        
+        // 頁面載入時根據 URL 錨點載入對應頁面
+        var initialPage = getAnchorFromUrl();
+        switchToPage(initialPage);
+        
+        // 導航標籤點擊事件
+        $('.nav-tab').click(function() {
+            var target = $(this).data('target');
+            switchToPage(target);
+        });
+        
+        // 監聽瀏覽器前進/後退按鈕
+        $(window).on('hashchange', function() {
+            var target = getAnchorFromUrl();
+            switchToPage(target);
+        });
+
+        // 可展開/收合區塊的點擊事件（使用事件委派）
+        $(document).on('click', '.item-header', function() {
+            var $header = $(this);
+            var $content = $header.next('.item-content');
+            
+            // 切換展開/收合狀態
+            $header.toggleClass('active');
+            $content.toggleClass('active');
+        });
+
+        // 平滑滾動效果
+        $(document).on('click', 'a[href^="#"]', function(e) {
+            e.preventDefault();
+            var target = $($(this).attr('href'));
+            if (target.length) {
+                $('html, body').animate({
+                    scrollTop: target.offset().top - 100
+                }, 800);
+            }
+        });
+
+        // 滾動時添加視差效果
+        $(window).scroll(function() {
+            var scrolled = $(window).scrollTop();
+            var parallax = scrolled * 0.5;
+            $('body').css('background-position', '0 ' + parallax + 'px');
+        });
+
+        // 載入動畫
+        $('.content-section.active').addClass('loaded');
+        
+        // 添加懸停效果
+        $(document).on('mouseenter', '.video-card, .book-card', function() {
+            $(this).addClass('hover-effect');
+        }).on('mouseleave', '.video-card, .book-card', function() {
+            $(this).removeClass('hover-effect');
+        });
+
+        // 影片大綱展開/收合功能（使用事件委派）
+        $(document).on('click', '.outline-toggle-btn', function() {
+            var $button = $(this);
+            var $buttonText = $button.find('span');
+            var $outline = $button.parent().next('.video-outline');
+            
+            if ($outline.is(':hidden')) {
+                $outline.show();
+                $buttonText.text('收起大綱');
+                $button.addClass('active');
+            } else {
+                $outline.hide();
+                $buttonText.text('觀看影片大綱');
+                $button.removeClass('active');
+            }
+        });
+
+        // 時間軸節點hover效果（使用事件委派）
+        $(document).on('mouseenter', '.timeline-node', function() {
+            $(this).addClass('glow');
+        }).on('mouseleave', '.timeline-node', function() {
+            $(this).removeClass('glow');
+        });
+
+        // 新增滾動動畫初始化
+        setTimeout(function() {
+            initScrollAnimations();
+        }, 500);
+
+        // 頁面切換時重新初始化動畫
+        $('.nav-tab').click(function() {
+            var target = $(this).data('target');
+            switchToPage(target);
+            
+            // 如果切換到大罷免頁面，重新初始化動畫
+            if (target === 'bamian') {
+                setTimeout(function() {
+                    initScrollAnimations();
+                }, 600);
+            }
+        });
+
+
+        // 滾動動畫觀察器
+        function initScrollAnimations() {
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate-in');
+                    }
+                });
+            }, observerOptions);
+
+            // 觀察所有需要動畫的元素
+            const animateElements = document.querySelectorAll('.timeline-item, .urgent-warning-card, .section-title');
+            animateElements.forEach(el => {
+                observer.observe(el);
+            });
+        }
+
+        // 新增滾動動畫初始化
+        setTimeout(function() {
+            initScrollAnimations();
+        }, 500);
+
+        // 頁面切換時重新初始化動畫
+        $('.nav-tab').click(function() {
+            var target = $(this).data('target');
+            switchToPage(target);
+            
+            // 如果切換到大罷免頁面，重新初始化動畫
+            if (target === 'bamian') {
+                setTimeout(function() {
+                    initScrollAnimations();
+                }, 600);
+            }
+        });
+    });
+    </script>
+</body>
+</html>
