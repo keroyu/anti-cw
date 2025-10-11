@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>反認知作戰教育資源網</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="css/stylesheet.css">
+    <style>
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>反認知作戰教育資源網</h1>
+            <p>了解認知戰威脅，建立資訊免疫力，守護民主價值</p>
+            <div class="nav-tabs">
+                <button class="nav-tab active" data-target="translation">重要學術資料</button>
+                <button class="nav-tab" data-target="analysis">綜合分析</button>
+                <button class="nav-tab" data-target="videos">影片資源</button>
+                <button class="nav-tab" data-target="books">參考書籍</button>
+            </div>
+        </div>
+
+        <!-- 重要學術資料區塊 -->
+        <div id="translation" class="content-section active">
+            <!-- 插入 nav-translation.html -->
+            
+        </div>
+
+        <!-- 綜合分析區塊 -->
+        <div id="analysis" class="content-section">
+
+            <!-- 插入 nav-analysis.html -->
+            
+        </div>
+
+        <!-- 影片資源區塊 -->
+        <div id="videos" class="content-section">
+
+            <!-- 插入 nav-videos.html -->
+
+        </div>
+
+        <!-- 參考書籍區塊 -->
+        <div id="books" class="content-section">
+
+            <!-- 插入 nav-books.html -->
+            
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+
+            // 導航標籤點擊事件
+            $('.nav-tab').click(function() {
+                var target = $(this).data('target');
+                
+                // 移除所有 active 類別
+                $('.nav-tab').removeClass('active');
+                $('.content-section').removeClass('active');
+                
+                // 添加 active 類別到點擊的標籤和對應內容
+                $(this).addClass('active');
+                $('#' + target).addClass('active');
+            });
+
+            // 可展開/收合區塊的點擊事件
+            $('.item-header').click(function() {
+                var $header = $(this);
+                var $content = $header.next('.item-content');
+                
+                // 切換展開/收合狀態
+                $header.toggleClass('active');
+                $content.toggleClass('active');
+                
+                // 其他區塊收合（可選，如果希望同時只展開一個）
+                // $('.item-header').not($header).removeClass('active');
+                // $('.item-content').not($content).removeClass('active');
+            });
+
+            // 平滑滾動效果
+            $('a[href^="#"]').click(function(e) {
+                e.preventDefault();
+                var target = $($(this).attr('href'));
+                if (target.length) {
+                    $('html, body').animate({
+                        scrollTop: target.offset().top - 100
+                    }, 800);
+                }
+            });
+
+            // 滾動時添加視差效果
+            $(window).scroll(function() {
+                var scrolled = $(window).scrollTop();
+                var parallax = scrolled * 0.5;
+                $('body').css('background-position', '0 ' + parallax + 'px');
+            });
+
+            // 載入動畫
+            $('.content-section.active').addClass('loaded');
+            
+            // 添加懸停效果
+            $('.video-card, .book-card').hover(
+                function() {
+                    $(this).addClass('hover-effect');
+                },
+                function() {
+                    $(this).removeClass('hover-effect');
+                }
+            );
+        });
+    </script>
+</body>
+</html>
