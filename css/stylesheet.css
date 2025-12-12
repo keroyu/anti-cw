@@ -251,24 +251,6 @@ p.answer-text {
     line-height: 1.5;
 }
 
-.hero-cta {
-    text-align: center;
-    padding: 20px 0;
-}
-
-.cta-text {
-    font-size: 1.3em;
-    color: #3F7C85;
-    font-weight: 600;
-    margin: 0;
-    animation: pulse 2s ease-in-out infinite;
-}
-
-@keyframes pulse {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.05); }
-}
-
 /* Hero Unit 響應式設計 */
 @media (max-width: 1024px) {
     .solution-cards {
@@ -700,10 +682,6 @@ p.answer-text {
 
     .solution-cards {
         grid-template-columns: 1fr;
-    }
-
-    .cta-text {
-        font-size: 1.1em;
     }
 
     /* 原有手機樣式 */
