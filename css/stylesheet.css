@@ -345,6 +345,25 @@ p.answer-text {
     to { opacity: 1; transform: translateY(0); }
 }
 
+.intro-section {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 12px;
+    padding: 25px 30px;
+    margin-bottom: 30px;
+    border-left: 4px solid #3F7C85;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.intro-section p {
+    margin-bottom: 15px;
+    color: #444;
+    line-height: 1.8;
+}
+
+.intro-section p:last-child {
+    margin-bottom: 0;
+}
+
 .section-title {
     font-size: 2em;
     color: #3F7C85;
@@ -786,5 +805,316 @@ p.answer-text {
 
     .back-to-nav-btn .btn-text {
         font-size: 0.6em;
+    }
+}
+
+/* ===== 好懂圖卡頁面樣式 ===== */
+
+/* 圖卡區塊容器 */
+.card-section {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 15px;
+    margin-bottom: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.card-header {
+    background: linear-gradient(135deg, #3F7C85 0%, #00CCBF 100%);
+    padding: 20px 25px;
+}
+
+.card-header h3 {
+    color: white;
+    font-size: 1.4em;
+    font-weight: 600;
+    margin: 0;
+}
+
+.card-content {
+    padding: 25px;
+}
+
+.card-description {
+    color: #2c3e50;
+    line-height: 1.8;
+    margin-bottom: 25px;
+    font-size: 1.05em;
+}
+
+/* Slideshow 容器 */
+.slideshow-container {
+    position: relative;
+    max-width: 100%;
+    margin: 0 auto 15px;
+    background: #f5f5f5;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+}
+
+.slides-wrapper {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    gap: 10px;
+    padding: 15px;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.slides-wrapper::-webkit-scrollbar {
+    display: none;
+}
+
+/* 單張幻燈片 */
+.slide {
+    flex: 0 0 auto;
+    height: 180px;
+    border-radius: 8px;
+    overflow: hidden;
+    background: white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.slide img {
+    height: 180px;
+    width: auto;
+    display: block;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.slide img:hover {
+    transform: scale(1.02);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* 導航按鈕 */
+.slide-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(63, 124, 133, 0.85);
+    color: white;
+    border: none;
+    padding: 12px 14px;
+    cursor: pointer;
+    font-size: 1.1em;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+
+.slide-nav:hover {
+    background: rgba(63, 124, 133, 1);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.slide-nav.prev {
+    left: 5px;
+}
+
+.slide-nav.next {
+    right: 5px;
+}
+
+/* 頁碼指示器 - 隱藏（水平滾動不需要） */
+.slide-indicators {
+    display: none;
+}
+
+/* 圖卡底部連結按鈕 */
+.slide-links {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 15px;
+    background: rgba(0, 0, 0, 0.02);
+}
+
+.slide-link-btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 4px 10px;
+    border-radius: 5px;
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.72em;
+    transition: opacity 0.2s ease;
+    line-height: 1.3;
+}
+
+.slide-link-btn:hover {
+    opacity: 0.8;
+}
+
+.slide-link-btn.gdrive {
+    background: #4285F4;
+}
+
+.slide-link-btn.threads {
+    background: #000000;
+}
+
+.slide-link-btn.instagram {
+    background: #E4405F;
+}
+
+/* 燈箱樣式 */
+.lightbox {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
+}
+
+.lightbox.active {
+    display: flex;
+}
+
+.lightbox-content {
+    position: relative;
+    max-width: 90%;
+    max-height: 90%;
+}
+
+.lightbox-content img {
+    max-width: 100%;
+    max-height: 90vh;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+.lightbox-close {
+    position: absolute;
+    top: -40px;
+    right: 0;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 2em;
+    cursor: pointer;
+    padding: 5px 10px;
+    transition: opacity 0.2s;
+}
+
+.lightbox-close:hover {
+    opacity: 0.7;
+}
+
+.lightbox-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    color: white;
+    font-size: 2em;
+    padding: 15px 20px;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: background 0.2s;
+}
+
+.lightbox-nav:hover {
+    background: rgba(255, 255, 255, 0.4);
+}
+
+.lightbox-nav.prev {
+    left: 20px;
+}
+
+.lightbox-nav.next {
+    right: 20px;
+}
+
+.lightbox-counter {
+    position: absolute;
+    bottom: -35px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    font-size: 0.9em;
+}
+
+/* 手機版圖卡樣式 */
+@media (max-width: 768px) {
+    .card-header {
+        padding: 15px 20px;
+    }
+
+    .card-header h3 {
+        font-size: 1.1em;
+    }
+
+    .card-content {
+        padding: 15px;
+    }
+
+    .card-description {
+        font-size: 0.95em;
+        margin-bottom: 15px;
+    }
+
+    .slides-wrapper {
+        padding: 10px;
+        gap: 8px;
+    }
+
+    .slide {
+        height: 140px;
+    }
+
+    .slide img {
+        height: 140px;
+    }
+
+    .slide-nav {
+        padding: 8px 10px;
+        font-size: 0.9em;
+    }
+
+    .slide-nav.prev {
+        left: 3px;
+    }
+
+    .slide-nav.next {
+        right: 3px;
+    }
+
+    .slide-links {
+        padding: 6px 10px;
+        gap: 5px;
+    }
+
+    .slide-link-btn {
+        padding: 3px 8px;
+        font-size: 0.68em;
+    }
+
+    .lightbox-nav {
+        padding: 10px 15px;
+        font-size: 1.5em;
+    }
+
+    .lightbox-nav.prev {
+        left: 10px;
+    }
+
+    .lightbox-nav.next {
+        right: 10px;
     }
 }
