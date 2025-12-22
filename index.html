@@ -198,7 +198,7 @@
     }
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <link rel="stylesheet" href="css/stylesheet.css?v=1.55">
+    <link rel="stylesheet" href="css/stylesheet.css?v=1.57">
     <link rel="stylesheet" href="css/nav-bamian.css?v=1.3">
 </head>
 <!-- Google tag (gtag.js) -->
@@ -211,6 +211,17 @@
   gtag('config', 'G-HDK9PF5FH1');
 </script>
 <body>
+    <!-- 燈箱 (全域) -->
+    <div id="lightbox" class="lightbox">
+        <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+        <button class="lightbox-nav prev" onclick="lightboxNav(-1)">&#10094;</button>
+        <div class="lightbox-content">
+            <img id="lightbox-img" src="" alt="">
+        </div>
+        <button class="lightbox-nav next" onclick="lightboxNav(1)">&#10095;</button>
+        <div class="lightbox-counter"><span id="lightbox-current">1</span> / <span id="lightbox-total">1</span></div>
+    </div>
+
     <div class="container">
         <div class="header">
             <div id="top-anchor"></div>
@@ -363,13 +374,30 @@
         function getAnchorFromUrl() {
             var hash = window.location.hash;
             if (hash) {
-                return hash.substring(1); // 移除 # 符號
+                var fullAnchor = hash.substring(1); // 移除 # 符號
+                // 檢查是否包含子錨點 (如 cards/traffic-manipulation)
+                if (fullAnchor.indexOf('/') > -1) {
+                    return fullAnchor.split('/')[0]; // 返回主頁面 (cards)
+                }
+                return fullAnchor;
             }
             return 'home'; // 預設首頁
         }
 
+        // 從 URL 獲取子錨點
+        function getSubAnchorFromUrl() {
+            var hash = window.location.hash;
+            if (hash) {
+                var fullAnchor = hash.substring(1);
+                if (fullAnchor.indexOf('/') > -1) {
+                    return fullAnchor.split('/')[1]; // 返回子錨點
+                }
+            }
+            return null;
+        }
+
         // 載入指定頁面
-        function loadPage(target) {
+        function loadPage(target, subAnchor) {
             var filename = 'nav-' + target + '.html';
             // 加上時間戳避免緩存
             var timestamp = new Date().getTime();
@@ -386,31 +414,45 @@
                             initScrollAnimations();
                         }, 200);
                     }
+                    // 如果有子錨點，滾動到該位置
+                    if (subAnchor) {
+                        setTimeout(function() {
+                            var element = document.getElementById(subAnchor);
+                            if (element) {
+                                element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                            }
+                        }, 300);
+                    }
                     // 首頁動畫初始化由 nav-home.html 內建 script 處理
                 }
             });
         }
-        
+
         // 切換到指定頁面
-        function switchToPage(target) {
+        function switchToPage(target, subAnchor) {
             // 移除所有 active 類別
             $('.nav-tab').removeClass('active');
             $('.content-section').removeClass('active');
-            
+
             // 添加 active 類別到對應的標籤和內容
             $('.nav-tab[data-target="' + target + '"]').addClass('active');
             $('#' + target).addClass('active');
-            
+
             // 載入頁面內容
-            loadPage(target);
-            
+            loadPage(target, subAnchor);
+
             // 更新 URL 錨點
-            window.location.hash = '#' + target;
+            if (subAnchor) {
+                window.location.hash = '#' + target + '/' + subAnchor;
+            } else {
+                window.location.hash = '#' + target;
+            }
         }
-        
+
         // 頁面載入時根據 URL 錨點載入對應頁面
         var initialPage = getAnchorFromUrl();
-        switchToPage(initialPage);
+        var initialSubAnchor = getSubAnchorFromUrl();
+        switchToPage(initialPage, initialSubAnchor);
 
         // 滾動到頁面頂部（h1 位置）
         setTimeout(function() {
@@ -429,7 +471,8 @@
         // 監聽瀏覽器前進/後退按鈕
         $(window).on('hashchange', function() {
             var target = getAnchorFromUrl();
-            switchToPage(target);
+            var subAnchor = getSubAnchorFromUrl();
+            switchToPage(target, subAnchor);
         });
 
         // 可展開/收合區塊的點擊事件（使用事件委派）

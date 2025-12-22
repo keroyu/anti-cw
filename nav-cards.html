@@ -1,18 +1,7 @@
 <h2 class="section-title">好懂圖卡</h2>
 
-<!-- 燈箱 -->
-<div id="lightbox" class="lightbox">
-    <div class="lightbox-content">
-        <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
-        <button class="lightbox-nav prev" onclick="lightboxNav(-1)">&#10094;</button>
-        <img id="lightbox-img" src="" alt="">
-        <button class="lightbox-nav next" onclick="lightboxNav(1)">&#10095;</button>
-        <div class="lightbox-counter"><span id="lightbox-current">1</span> / <span id="lightbox-total">1</span></div>
-    </div>
-</div>
-
 <!-- 圖卡區塊 1: 限流與放大 -->
-<div class="card-section">
+<div id="traffic-manipulation" class="card-section">
     <div class="card-header">
         <h3>網軍對社群的攻擊不只會「限流」，還會「放大」！</h3>
     </div>
@@ -38,6 +27,7 @@
             <button class="slide-nav next" onclick="scrollSlides(1, 1)">&#10095;</button>
             <div class="slide-links">
                 <a href="https://drive.google.com/drive/folders/18iwC5paRqSWRsa52rCnxZt2_Rq3J33hx?usp=drive_link" target="_blank" class="slide-link-btn gdrive">Google Drive 下載</a>
+                <button class="slide-link-btn share" onclick="copyShareLink('traffic-manipulation')">分享連結</button>
             </div>
         </div>
 
@@ -45,7 +35,7 @@
 </div>
 
 <!-- 圖卡區塊 2: 限流操作SOP -->
-<div class="card-section">
+<div id="throttling-sop" class="card-section">
     <div class="card-header">
         <h3>網軍「限流」操作 SOP：他們精通社群演算法</h3>
     </div>
@@ -70,12 +60,32 @@
             <button class="slide-nav next" onclick="scrollSlides(2, 1)">&#10095;</button>
             <div class="slide-links">
                 <a href="https://drive.google.com/drive/folders/18iwC5paRqSWRsa52rCnxZt2_Rq3J33hx?usp=drive_link" target="_blank" class="slide-link-btn gdrive">Google Drive 下載</a>
+                <button class="slide-link-btn share" onclick="copyShareLink('throttling-sop')">分享連結</button>
             </div>
         </div>
     </div>
 </div>
 
 <script>
+// 分享連結功能
+function copyShareLink(anchorId) {
+    const url = window.location.origin + window.location.pathname + '#cards/' + anchorId;
+    navigator.clipboard.writeText(url).then(function() {
+        // 顯示複製成功提示
+        const btn = event.target;
+        const originalText = btn.textContent;
+        btn.textContent = '已複製！';
+        btn.classList.add('copied');
+        setTimeout(function() {
+            btn.textContent = originalText;
+            btn.classList.remove('copied');
+        }, 1500);
+    }).catch(function() {
+        // 降級方案
+        prompt('複製此連結：', url);
+    });
+}
+
 // 水平滾動控制
 function scrollSlides(slideshowId, direction) {
     const container = document.querySelector(`[data-slideshow="${slideshowId}"] .slides-wrapper`);
