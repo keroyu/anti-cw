@@ -235,18 +235,33 @@
         });
     }
 
-    // ===== 處理 URL Hash (分享連結跳轉) =====
+    // ===== 處理 URL Hash (分享連結跳轉 + 高亮) =====
     function handleHashNavigation() {
         const hash = window.location.hash;
+
+        // 移除所有 active 狀態
+        document.querySelectorAll('.card-section').forEach(section => {
+            section.classList.remove('active');
+        });
+
         if (hash) {
             const target = document.querySelector(hash);
             if (target) {
+                // 滾動到目標
                 setTimeout(() => {
                     target.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 }, 300);
+
+                // 如果是 card-section，加入 active 狀態
+                if (target.classList.contains('card-section')) {
+                    target.classList.add('active');
+                }
             }
         }
     }
+
+    // 監聽 hash 變化
+    window.addEventListener('hashchange', handleHashNavigation);
 
     // ===== 初始化 =====
     document.addEventListener('DOMContentLoaded', function() {
