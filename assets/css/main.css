@@ -1291,6 +1291,14 @@ p.answer-text {
     margin-bottom: 20px;
 }
 
+.card-detail-content .slide {
+    height: 300px;
+}
+
+.card-detail-content .slide img {
+    height: 300px;
+}
+
 .back-to-index {
     margin-top: 25px;
     text-align: center;
@@ -1359,6 +1367,14 @@ p.answer-text {
 
     .card-detail-content {
         padding: 20px;
+    }
+
+    .card-detail-content .slide {
+        height: 200px;
+    }
+
+    .card-detail-content .slide img {
+        height: 200px;
     }
 }
 
