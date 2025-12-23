@@ -845,11 +845,6 @@ p.answer-text {
 .card-header {
     background: #3F7C85;
     padding: 12px 15px;
-    transition: background 0.3s ease;
-}
-
-.card-section.active .card-header {
-    background: #FF5F5D;
 }
 
 .card-header h3 {
