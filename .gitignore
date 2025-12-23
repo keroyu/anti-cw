@@ -18,3 +18,12 @@ id_rsa.pub
 node_modules/
 .cache/
 dist/
+
+# Jekyll
+_site/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
+vendor/
+.bundle/
+Gemfile.lock

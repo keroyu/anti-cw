@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="zh-TW" prefix="og: https://ogp.me/ns#">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page.title | default: site.title }}</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="{{ page.description | default: site.description }}">
+    <meta name="keywords" content="{{ page.keywords | default: '認知作戰,cognitive warfare,資訊戰,information warfare,假訊息,假新聞,事實查核,中共網軍,俄羅斯網軍,台灣民主,媒體識讀' }}">
+    <meta name="author" content="{{ site.author.name }}">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <meta name="googlebot" content="index, follow">
+    <meta name="revisit-after" content="3 days">
+    <meta name="theme-color" content="#3F7C85">
+
+    <!-- Geo Tags -->
+    <meta name="geo.region" content="TW">
+    <meta name="geo.placename" content="Taiwan">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="{{ page.og_type | default: 'website' }}">
+    <meta property="og:title" content="{{ page.title | default: site.title }}">
+    <meta property="og:description" content="{{ page.description | default: site.description }}">
+    <meta property="og:url" content="{{ page.url | absolute_url }}">
+    <meta property="og:site_name" content="{{ site.title }}">
+    <meta property="og:locale" content="zh_TW">
+    <meta property="og:image" content="{{ page.image | default: site.og_image | absolute_url }}">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{ page.title | default: site.title }}">
+    <meta name="twitter:description" content="{{ page.description | default: site.description }}">
+    <meta name="twitter:image" content="{{ page.image | default: site.og_image | absolute_url }}">
+    <meta name="twitter:site" content="@{{ site.twitter.username }}">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="{{ page.url | absolute_url }}">
+
+    <!-- Preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Schema.org -->
+    {% include schema.html %}
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}?v=2.0">
+    {% if page.extra_css %}
+    <link rel="stylesheet" href="{{ page.extra_css | relative_url }}">
+    {% endif %}
+
+    <!-- Google Analytics -->
+    {% if site.google_analytics %}
+    <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics }}"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', '{{ site.google_analytics }}');
+    </script>
+    {% endif %}
+</head>
+<body>
+    <!-- 燈箱 (全域) -->
+    {% include lightbox.html %}
+
+    <div class="container">
+        <!-- Header -->
+        {% include header.html %}
+
+        <!-- 主要內容 -->
+        <main class="content-section active">
+            {{ content }}
+        </main>
+    </div>
+
+    <!-- 懸浮返回導航按鈕 -->
+    <button id="back-to-nav" class="back-to-nav-btn" title="返回導航列">
+        <span class="btn-icon">☰</span>
+        <span class="btn-text">導航</span>
+    </button>
+
+    <!-- 共用 JavaScript -->
+    <script src="{{ '/assets/js/main.js' | relative_url }}?v=2.0"></script>
+    {% if page.extra_js %}
+    <script src="{{ page.extra_js | relative_url }}"></script>
+    {% endif %}
+</body>
+</html>

@@ -1,0 +1,634 @@
+---
+layout: default
+title: 2025大罷免 - 完整時間軸與認知戰分析 | 反認知作戰教育資源網
+description: 2025年台灣大罷免事件完整時間軸，追蹤國會擴權法案、藍白立委爭議行為、國際局勢變化。以事實為基礎，提供可靠來源供民眾查證。
+keywords: 2025大罷免,國會擴權,藍白立委,傅崐萁,認知作戰,台灣民主
+nav_id: bamian
+breadcrumb: true
+---
+
+<h1 class="section-title">2025大罷免專題</h1>
+<div class="video-shorts-container">
+    <!-- 前三個影片直接顯示 -->
+    <div class="video-shorts-grid" id="main-videos-grid">
+        <!-- 主要影片內容將由 JavaScript 動態載入 -->
+    </div>
+
+    <!-- 更多影片收合區塊 -->
+    <div class="more-videos-section">
+        <button class="expand-videos-btn" onclick="toggleMoreVideos()">
+            <span class="expand-text">顯示更多影片</span>
+            <span class="expand-icon">▼</span>
+        </button>
+
+        <div class="more-videos-content" style="display: none;">
+            <div class="video-shorts-grid" id="more-videos-grid">
+                <!-- 更多影片內容將由 JavaScript 動態載入 -->
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+// 影片數據 - 直接定義在 JavaScript 中
+const videosData = {
+    "mainVideos": [
+        {
+            "id": "X7jrTCKDat4",
+            "title": "兩岸水域問題 - 版本3",
+            "description": "國際局勢超緊張！日本開始「台灣有事」撤僑演練，德國砸千億歐元加強國防，美軍預測中共可能在2025到2027年發動戰爭。就在這關鍵時刻，陳永康、陳玉珍等立委竟然提案說金門馬祖近海域不一定是中華民國的！他們要淡化主權爭議，還說兩岸是內戰關係，意思就是中共打過來美日盟軍都不能幫忙。",
+            "socialLinks": {
+                "youtube": "https://youtube.com/shorts/X7jrTCKDat4?feature=share",
+                "instagram": "https://www.instagram.com/reel/DNFkULaxH68/?igsh=MW53c3poN2JveXoxcQ==",
+                "facebook": "https://www.facebook.com/mo22mo22mo/videos/738405812413158",
+                "line": null
+            },
+            "documents": [
+                "https://ppg.ly.gov.tw/ppg/download/agenda1/02/pdf/11/01/16/LCEWA01_110116_00022.pdf"
+            ]
+        },
+        {
+            "id": "n7puBsOtj64",
+            "title": "中配入籍六年改四年",
+            "description": "國民黨立委推動修法，將中國配偶取得身分證時間從六年縮短為四年。這些中配可以保留中國國籍同時更快擁有投票權，還能讓70歲以上雙親、中國籍子女來台定居，滿六個月後就能使用健保資源。這會大幅改變台灣選舉生態，讓更多具中國背景人士快速取得投票權，直接影響台灣未來政治走向！",
+            "socialLinks": {
+                "youtube": "https://youtube.com/shorts/n7puBsOtj64?feature=share",
+                "instagram": null,
+                "facebook": null,
+                "line": null
+            },
+            "documents": [
+                "https://ppg.ly.gov.tw/ppg/download/agenda1/02/pdf/11/02/18/LCEWA01_110218_00017.pdf"
+            ]
+        },
+        {
+            "id": "rwo5QgIVWgM",
+            "title": "兩岸和平協議",
+            "description": "資深國民黨立委羅明才自2017年起不斷推動「兩岸和平協議」，要求政府向中國低頭，甚至引用反分裂國家法恐嚇官員。歷史血淋淋教訓：西藏1951年簽署和平協議後遭三次血腥鎮壓、烏克蘭多次協議仍難逃戰火。羅明才父親羅福助為天道盟創辦人，因罪潛逃中國遭通緝，其本人掌控財委會並涉違法開發。這樣的立委能守護台灣嗎？",
+            "socialLinks": {
+                "youtube": "https://youtube.com/shorts/rwo5QgIVWgM",
+                "instagram": "https://www.instagram.com/reel/DNI8T0zyd0e/?igsh=NnFrODNqaXYwNGdw",
+                "facebook": null,
+                "line": null
+            },
+            "documents": [
+                "https://udn.com/news/story/6656/8270715",
+                "https://gazette.nat.gov.tw/EG_FileManager/eguploadpub/eg031144/ch02/type3/gov15/num8/Eg.pdf"
+            ]
+        }
+    ],
+    "moreVideos": [
+        {
+          "id": "WTJ59oCTS8Y",
+          "title": "國會擴權2.0",
+          "description": "台灣民主正面臨崩解危機！ 藍白立委封殺大法官提名，癱瘓憲法法庭，公然宣稱「不必遵從大法官解釋」。他們強推國會擴權法案被判違憲後，不但拒絕執行判決，還要修法提高決議門檻至三分之二，企圖讓立法院凌駕行政、司法、總統之上。連國家預算都被阻擋，各機關將一一癱瘓。學者警告這是「民主崩解」前兆，如不立即行動阻止，台灣恐重回威權時代！",
+          "socialLinks": {
+            "youtube": "https://www.youtube.com/shorts/WTJ59oCTS8Y",
+            "instagram": null,
+            "facebook": "https://www.facebook.com/bamboojune/videos/768175789059130/",
+            "line": null
+          },
+          "collapsed": true
+        },
+        {
+            "id": "XlzX3jovTak",
+            "title": "傅崐萁到底是誰的人？",
+            "description": "國民黨團總召傅崐萁帶團赴中密會統戰高層，回台立刻強推國會擴權惡法，接著大砍台灣國防預算，中國國台辦竟然公開力挺！最離譜的是，立法院開議關鍵時刻，他請假跑香港說「完成歷史任務」。傅崐萁的每個動作都在配合北京劇本。這掌握立法院關鍵權力的人，究竟是台灣人選出的總召，還是中共安插的代理人？",
+            "socialLinks": {
+                "youtube": "https://youtube.com/shorts/XlzX3jovTak",
+                "instagram": "https://www.instagram.com/reel/DNM_BWARmHF/?igsh=M3U1bzN0cWVxN2R2",
+                "facebook": null,
+                "line": null
+            },
+            "documents": [
+                null
+            ]
+        },
+        {
+            "id": "MEqqShAKi5k",
+            "title": "托育支持 住宅補助刪凍結",
+            "description": "「重要的津貼及補助要沒了！」無數個家庭正在為孩子的托育費用發愁、擔心往後房租補助突然消失！你可能不知道，全台灣有數十萬戶家庭靠這筆錢，才有下一頓飯。年輕人生小孩，有政府照顧本來應該要比以前輕鬆，可是藍營立委卻收回福利。對月薪3-4萬的年輕人來說，每月最高可領8000元的租金補助，這8000元可能是生存和負債的分水嶺。全台有超過50萬租戶領這筆補助，，他們等不起漫長的政治程序！",
+            "socialLinks": {
+                "youtube": "https://www.youtube.com/shorts/MEqqShAKi5k",
+                "instagram": null,
+                "facebook": null,
+                "line": null
+            },
+            "documents": [
+                null
+            ]
+        }
+    ]
+};
+
+// 渲染主要影片
+function renderMainVideos(videos) {
+    const container = document.getElementById('main-videos-grid');
+    if (container) {
+        container.innerHTML = videos.map(video => createVideoCard(video)).join('');
+    }
+}
+
+// 渲染更多影片
+function renderMoreVideos(videos) {
+    const container = document.getElementById('more-videos-grid');
+    if (container) {
+        container.innerHTML = videos.map(video => createVideoCard(video, true)).join('');
+    }
+}
+
+// 創建影片卡片
+function createVideoCard(video, isCollapsed = false) {
+    const cardClass = isCollapsed ? 'video-short-card collapsed' : 'video-short-card';
+
+    // 創建影片嵌入區塊（只有主要影片才顯示）
+    const videoEmbed = !isCollapsed ? `
+        <div class="video-embed">
+            <iframe
+                src="https://www.youtube.com/embed/${video.id}"
+                title="${video.title}"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen>
+            </iframe>
+        </div>
+    ` : '';
+
+    // 創建社交連結
+    const socialLinks = createSocialLinks(video.socialLinks);
+
+    // 創建相關來源連結
+    const documentLinks = createDocumentLinks(video.documents);
+
+    return `
+        <div class="${cardClass}">
+            ${videoEmbed}
+            <h4 class="video-title">${video.title}</h4>
+            <p class="video-description">${video.description}</p>
+            <div class="social-links">
+                ${socialLinks}
+            </div>
+            ${documentLinks}
+        </div>
+    `;
+}
+
+// 創建社交連結
+function createSocialLinks(socialLinks) {
+    const platforms = [
+        { key: 'youtube', icon: '📺', name: 'YouTube' },
+        { key: 'instagram', icon: '📷', name: 'Instagram' },
+        { key: 'facebook', icon: '📘', name: 'Facebook' },
+        { key: 'line', icon: '💬', name: 'Line' }
+    ];
+
+    return platforms.map(platform => {
+        const link = socialLinks[platform.key];
+        if (link) {
+            return `
+                <a href="${link}" class="social-btn ${platform.key} active" target="_blank">
+                    <span class="social-icon">${platform.icon}</span> ${platform.name}
+                </a>
+            `;
+        } else {
+            return `
+                <span class="social-btn ${platform.key} disabled">
+                    <span class="social-icon">${platform.icon}</span> ${platform.name}
+                </span>
+            `;
+        }
+    }).join('');
+}
+
+// 創建相關來源連結
+function createDocumentLinks(documents) {
+    if (!documents || documents.length === 0 || (documents.length === 1 && documents[0] === null)) {
+        return `
+            <div class="document-section">
+                <span class="document-label">相關來源：</span>
+                <span class="no-documents">暫無來源</span>
+            </div>
+        `;
+    }
+
+    const validDocs = documents.filter(d => d !== null);
+    if (validDocs.length === 0) {
+        return `
+            <div class="document-section">
+                <span class="document-label">相關來源：</span>
+                <span class="no-documents">暫無來源</span>
+            </div>
+        `;
+    }
+
+    const documentsList = validDocs.map((docUrl, index) => {
+        return `<a href="${docUrl}" class="document-link" target="_blank">網址 ${index + 1}</a>`;
+    }).join('');
+
+    return `
+        <div class="document-section">
+            <span class="document-label">相關來源：</span>
+            ${documentsList}
+        </div>
+    `;
+}
+
+// 立即執行載入影片數據
+(function() {
+    setTimeout(function() {
+        renderMainVideos(videosData.mainVideos);
+        renderMoreVideos(videosData.moreVideos);
+    }, 100);
+})();
+</script>
+
+<div class="section-title bamian-title">2025大罷免：為何罷免？</div>
+<p style="color: #747E7E; margin-bottom: 30px; line-height: 1.6;">
+    透過時間軸呈現事件脈絡與後果，以事實為基礎，提供可靠來源供民眾查證。以下來源連結由 Claude.AI 下指令找尋「可靠來源」，剛好較少納入《紅色滲透》點名的中資媒體。哪些台灣媒體已證實為中資主導，詳參影片「<a href="https://youtu.be/KWf4l0-hcR8">紅色滲透：台灣篇</a>」。極力推薦東昍先生好懂影片「<a href="https://youtu.be/nHJIFu_m0vY?si=aTEn0wbK9HMlVxnG">大罷免終極懶人包</a>」。
+</p>
+
+<div class="timeline-container">
+    <div class="timeline-line"></div>
+
+    <div class="timeline-item">
+        <div class="timeline-left">
+            <span class="timeline-date">2024年2月</span>
+            <h3 class="timeline-title">學者袁紅冰警告：<br>中共下一步滲透立法院</h3>
+        </div>
+        <div class="timeline-node" onclick="window.open('https://www.secretchina.com/news/b5/2024/02/06/1055063.html', '_blank')"></div>
+        <div class="timeline-right">
+            <div class="timeline-content">
+                <div class="timeline-description">
+                    海外華文媒體《看中國》採訪受澳洲政府庇護的中國學者袁紅冰。袁紅冰透露中國共產黨的下一步目標是透過立法院進行滲透，企圖搞亂台灣的政治體制和社會秩序。
+                </div>
+                <div class="timeline-consequences">
+                    <strong>預警意義：</strong>
+                    此警告為後續一連串國會爭議事件提供了重要背景脈絡，顯示相關政治行動可能並非偶然發生。
+                </div>
+                <div class="timeline-sources">
+                    <a href="https://www.secretchina.com/news/b5/2024/02/06/1055063.html" target="_blank">來源1：看中國報導</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="timeline-item">
+        <div class="timeline-left">
+            <span class="timeline-date">2024年4月</span>
+            <h3 class="timeline-title">傅崐萁帶16位國民黨立委<br>赴中見統戰官員</h3>
+        </div>
+        <div class="timeline-node" onclick="window.open('https://www.cna.com.tw/news/aipl/202404260199.aspx', '_blank')"></div>
+        <div class="timeline-right">
+            <div class="timeline-content">
+                <div class="timeline-description">
+                    立法委員傅崐萁率領16位國民黨立委前往中國大陸，與統戰系統最高層官員進行會面。此次行程的政治敏感性引發外界對這些立委政治立場和忠誠度的強烈質疑。
+                </div>
+                <div class="timeline-consequences">
+                    <strong>政治後果：</strong>
+                    此舉加深了社會對國民黨立委政治立場的疑慮，也為後續國會擴權法案的強行推動埋下了爭議的伏筆。
+                </div>
+                <div class="timeline-sources">
+                    <a href="https://www.cna.com.tw/news/aipl/202404260199.aspx" target="_blank">來源1：中央社報導</a>
+                    <a href="https://udn.com/news/story/6656/7925805" target="_blank">來源2：聯合新聞網</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="timeline-item">
+        <div class="timeline-left">
+            <span class="timeline-date">2024年5月</span>
+            <h3 class="timeline-title">國民黨立委跳過程序<br>強行通過國會擴權法案</h3>
+        </div>
+        <div class="timeline-node" onclick="window.open('https://www.businessweekly.com.tw/focus/blog/3015636', '_blank')"></div>
+        <div class="timeline-right">
+            <div class="timeline-content">
+                <div class="timeline-description">
+                    國民黨立委無視正常立法程序，強行通過極具爭議的國會擴權法案。該法案賦予立委強制要求各種團體、公司、政府官員甚至軍隊到立法院提供任何資料的權力，拒絕配合者最高可處十萬元罰鍰。更嚴重的是，即使民眾拒絕提供個人隱私文件或要求律師陪同出席，都必須經過立法院主席同意才能執行。
+                </div>
+                <div class="timeline-consequences">
+                    <strong>嚴重後果：</strong>
+                    法案最危險之處在於立委對取得的資料完全沒有保密義務，這意味著他們可以將機敏資料提供給任何人，包括對岸政權，嚴重威脅國家安全和個人隱私權。
+                </div>
+                <div class="timeline-sources">
+                    <a href="https://www.businessweekly.com.tw/focus/blog/3015636" target="_blank">來源1：商業周刊</a>
+                    <a href="https://www.cna.com.tw/news/aipl/202405175005.aspx" target="_blank">來源2：中央社報導</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="timeline-item">
+        <div class="timeline-left">
+            <span class="timeline-date">2024年10月</span>
+            <h3 class="timeline-title">憲法法庭宣告<br>國會擴權法案違憲</h3>
+        </div>
+        <div class="timeline-node" onclick="window.open('https://www.twreporter.org/a/constitutional-court-rejects-most-expansions-of-expanding-legislative-powers', '_blank')"></div>
+        <div class="timeline-right">
+            <div class="timeline-content">
+                <div class="timeline-description">
+                    憲法法庭經過嚴謹的司法審理程序後，正式宣告國會擴權法案的大部分條文違憲。法庭認定該法案嚴重侵犯憲法保障的人身自由與財產權，違背了憲法的基本精神和原則。
+                </div>
+                <div class="timeline-consequences">
+                    <strong>法治勝利：</strong>
+                    憲法法庭的判決重申了法治國家的核心原則，但同時也凸顯了立法過程中存在的重大程序瑕疵與政治操作問題。
+                </div>
+                <div class="timeline-sources">
+                    <a href="https://www.twreporter.org/a/constitutional-court-rejects-most-expansions-of-expanding-legislative-powers" target="_blank">來源1：報導者</a>
+                    <a href="https://udn.com/news/story/6656/8316075" target="_blank">來源2：聯合新聞網</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="timeline-item">
+        <div class="timeline-left">
+            <span class="timeline-date">2024年12月</span>
+            <h3 class="timeline-title">藍白立委修法<br>癱瘓憲法法庭運作</h3>
+        </div>
+        <div class="timeline-node" onclick="window.open('https://www.cna.com.tw/news/aipl/202411120147.aspx', '_blank')"></div>
+        <div class="timeline-right">
+            <div class="timeline-content">
+                <div class="timeline-description">
+                    藍白立委聯手修改憲法訴訟法，企圖癱瘓憲法法庭的正常運作。目前我國只有8位大法官在職，原本憲法規定只需三分之一（約3位）大法官即可召開憲法法庭進行審理，但藍白立委修法將門檻提高到需要10位大法官才能召開。
+                </div>
+                <div class="timeline-consequences">
+                    <strong>制衡失效：</strong>
+                    此修法實質上癱瘓了憲法法庭的監督功能，意味著藍白立委日後可以跳過程序強行通過任何不合理的法條，都不會再受到憲法法庭的有效制衡。
+                </div>
+                <div class="timeline-sources">
+                    <a href="https://www.cna.com.tw/news/aipl/202411120147.aspx" target="_blank">來源1：中央社報導</a>
+                    <a href="https://news.ttv.com.tw/news/11312200002800W/amp" target="_blank">來源2：台視新聞</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="timeline-item">
+        <div class="timeline-left">
+            <span class="timeline-date">2025年1月</span>
+            <h3 class="timeline-title">大幅刪減凍結<br>國防消防文化預算</h3>
+        </div>
+        <div class="timeline-node" onclick="window.open('https://tw.stock.yahoo.com/news/%E6%94%BF%E6%B2%BB-%E6%BD%9B%E8%89%A6%E9%A0%90%E7%AE%97%E6%94%B9%E5%87%8D10%E5%84%84-%E5%A4%96%E4%BA%A4%E9%83%A8%E5%AA%92%E5%AE%A3%E8%B2%BB%E5%85%A8%E5%88%AA-000043303.html', '_blank')"></div>
+        <div class="timeline-right">
+            <div class="timeline-content">
+                <div class="timeline-description">
+                    藍白立委聯手大幅刪減重要政府預算，包括凍結10億元的國造潛艦預算、完全刪除國土安全韌性建設1500億預算，並凍結900億元國防預算。值得注意的是，全世界只有17個國家具備潛艦國造能力，台灣是其中之一，這項技術對國防自主極為重要。
+                </div>
+                <div class="timeline-consequences">
+                    <strong>國安危機：</strong>
+                    根據袁紅冰揭露的文件，中國國台辦曾建議透過查弊案名義破壞台灣潛艦國造計畫，瓦解台灣以武拒統的意志。藍白立委的刪預算行為與此策略高度吻合，嚴重削弱台灣的國防自主能力。
+                </div>
+                <div class="timeline-sources">
+                    <a href="https://theinitium.com/article/20250123-whatsnew-taiwan-2025-budget" target="_blank">來源1：端傳媒</a>
+                    <a href="https://www.twreporter.org/a/legislature-passes-2025-government-budget" target="_blank">來源2：報導者</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="timeline-item">
+        <div class="timeline-left">
+            <span class="timeline-date">2025年1月</span>
+            <h3 class="timeline-title">國台辦公開稱讚<br>藍白砍預算行為</h3>
+        </div>
+        <div class="timeline-node" onclick="window.open('https://www.mirrormedia.mg/story/20250117edi045', '_blank')"></div>
+        <div class="timeline-right">
+            <div class="timeline-content">
+                <div class="timeline-description">
+                    國民黨與民眾黨聯手大幅刪減各部會預算後，引發社會熱議與不滿。中國國台辦發言人陳斌華在1月17日的記者會上，針對藍營質疑民進黨媒宣費用並提出刪減預算的主張，公開表示支持，聲稱民進黨當局「花民眾的錢洗民眾的腦」，並批評這是大內宣的延續與升級。
+                </div>
+                <div class="timeline-consequences">
+                    <strong>統戰呼應：</strong>
+                    中國官方公開稱讚台灣在野黨的政治行為，罕見地直接介入台灣內政討論，此舉讓外界更加質疑藍白立委刪減預算的真正動機。
+                </div>
+                <div class="timeline-sources">
+                    <a href="https://www.mirrormedia.mg/story/20250117edi045" target="_blank">來源1：鏡週刊</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="timeline-item">
+        <div class="timeline-left">
+            <span class="timeline-date">2025年2月</span>
+            <h3 class="timeline-title">國民黨團修正選罷法<br>提高罷免門檻</h3>
+        </div>
+        <div class="timeline-node" onclick="window.open('https://news.pts.org.tw/article/733781', '_blank')"></div>
+        <div class="timeline-right">
+            <div class="timeline-content">
+                <div class="timeline-description">
+                    國民黨團提出修正公職人員選舉罷免法，大幅提高罷免的實施門檻。新法要求罷免連署人必須提供身分證件等更嚴格的證明文件，增加了民眾行使憲法保障的罷免權的困難度。諷刺的是，過去假造大量連署書、甚至使用已過世國民身份造假的，正是這些提案的政黨。
+                </div>
+                <div class="timeline-consequences">
+                    <strong>民主倒退：</strong>
+                    此修法實質上限縮了憲法保障的人民罷免權，讓民意監督民選官員變得更加困難，有違民主制衡的基本原則。
+                </div>
+                <div class="timeline-sources">
+                    <a href="https://news.pts.org.tw/article/733781" target="_blank">來源1：公視新聞</a>
+                    <a href="https://www.rti.org.tw/news/view/id/2234801" target="_blank">來源2：央廣新聞</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="timeline-item">
+        <div class="timeline-left">
+            <span class="timeline-date">2025年2月20日</span>
+            <h3 class="timeline-title">傅崐萁香港返台自稱<br>「完成歷史任務」</h3>
+        </div>
+        <div class="timeline-node" onclick="window.open('https://tw.news.yahoo.com/%E9%A6%99%E6%B8%AF%E8%BF%94%E5%8F%B0%E7%A8%B1-%E5%AE%8C%E6%88%90%E6%AD%B7%E5%8F%B2%E4%BB%BB%E5%8B%99-%E5%82%85%E5%B4%90%E8%90%81%E7%8F%BE%E8%BA%AB%E6%A9%9F%E5%A0%B4%E9%81%AD%E5%97%86-%E4%B8%AD%E5%85%B1%E8%B5%B0%E7%8B%97-154130419.html', '_blank')"></div>
+        <div class="timeline-right">
+            <div class="timeline-content">
+                <div class="timeline-description">
+                    國民黨團總召傅崐萁與妻子花蓮縣長徐榛蔚一同從香港返台，在花蓮機場受訪時表示自己「又完成了一項歷史任務」。他聲稱此行是為了參加香港觀光博覽會，但身為總召卻在朝野協商時請假，加上正值開議前夕，此時機點赴港引發強烈質疑。
+                </div>
+                <div class="timeline-consequences">
+                    <strong>職責爭議：</strong>
+                    作為立法院國民黨團總召，在重要政治時刻缺席朝野協商，卻前往港澳地區進行「觀光推廣」，其優先順序和政治判斷受到社會嚴重質疑。
+                </div>
+                <div class="timeline-sources">
+                    <a href="https://tw.news.yahoo.com/%E9%A6%99%E6%B8%AF%E8%BF%94%E5%8F%B0%E7%A8%B1-%E5%AE%8C%E6%88%90%E6%AD%B7%E5%8F%B2%E4%BB%BB%E5%8B%99-%E5%82%85%E5%B4%90%E8%90%81%E7%8F%BE%E8%BA%AB%E6%A9%9F%E5%A0%B4%E9%81%AD%E5%97%86-%E4%B8%AD%E5%85%B1%E8%B5%B0%E7%8B%97-154130419.html" target="_blank">來源1：民視新聞</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="timeline-item">
+        <div class="timeline-left">
+            <span class="timeline-date">2025年3月27日</span>
+            <h3 class="timeline-title">日本首度公布<br>「台灣有事」撤離計畫</h3>
+        </div>
+        <div class="timeline-node" onclick="window.open('https://www.cna.com.tw/news/aipl/202503270251.aspx', '_blank')"></div>
+        <div class="timeline-right">
+            <div class="timeline-content">
+                <div class="timeline-description">
+                    日本政府首度公布因應「台灣有事」等情況的具體應變計畫，包括在約6天內撤離沖繩先島群島的約12萬居民及觀光客，並安排前往九州及山口縣共32個市町進行安置。此舉顯示日本政府對台海局勢的高度關切。
+                </div>
+                <div class="timeline-consequences">
+                    <strong>國際警訊：</strong>
+                    日本作為台灣重要鄰國，正式制定台海衝突應變計畫，反映國際社會對台海情勢的嚴重擔憂，也凸顯台海和平穩定的重要性。
+                </div>
+                <div class="timeline-sources">
+                    <a href="https://www.cna.com.tw/news/aipl/202503270251.aspx" target="_blank">來源1：中央社</a>
+                    <a href="https://news.pts.org.tw/article/744204" target="_blank">來源2：公視新聞</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="timeline-item">
+        <div class="timeline-left">
+            <span class="timeline-date">2025年4月</span>
+            <h3 class="timeline-title">藍白立委51次阻擋<br>國安相關修法</h3>
+        </div>
+        <div class="timeline-node" onclick="window.open('https://www.cna.com.tw/news/aipl/202504150149.aspx', '_blank')"></div>
+        <div class="timeline-right">
+            <div class="timeline-content">
+                <div class="timeline-description">
+                    民進黨團推動多項國家安全相關修法，包括要求立委訪問中國大陸必須明確報備行程、杜絕潛在的中共眼線滲透等重要措施。然而，一直聲稱民進黨「親共」的藍委和白委卻連續51次在立法院阻擋這些強化國安的修法提案。
+                </div>
+                <div class="timeline-consequences">
+                    <strong>國安漏洞：</strong>
+                    藍白立委的阻擋行為與其平時的政治宣傳形成強烈對比，讓外界質疑其真正的政治動機和立場，也使得國家安全防護出現漏洞。
+                </div>
+                <div class="timeline-sources">
+                    <a href="https://www.cna.com.tw/news/aipl/202504150149.aspx" target="_blank">來源1：中央社報導</a>
+                    <a href="https://news.ltn.com.tw/news/politics/paper/1708331" target="_blank">來源2：自由時報</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="timeline-item">
+        <div class="timeline-left">
+            <span class="timeline-date">2025年5月31日</span>
+            <h3 class="timeline-title">美國防部長警告<br>中國武力犯台毀滅性後果</h3>
+        </div>
+        <div class="timeline-node" onclick="window.open('https://www.cna.com.tw/news/aopl/202506010037.aspx', '_blank')"></div>
+        <div class="timeline-right">
+            <div class="timeline-content">
+                <div class="timeline-description">
+                    美國國防部長赫格塞斯出席亞洲安全會議「香格里拉對話」時強烈警告，中國任何以武力征服台灣的企圖都會對印太乃至全世界引發毀滅性後果，並明確表示「沒理由粉飾這件事」，展現美國對台海和平的堅定立場。
+                </div>
+                <div class="timeline-consequences">
+                    <strong>國際表態：</strong>
+                    美國在重要國際場合公開強硬表態，顯示對台海安全的重視程度，同時警告任何武力改變現狀的嚴重後果。
+                </div>
+                <div class="timeline-sources">
+                    <a href="https://www.cna.com.tw/news/aopl/202506010037.aspx" target="_blank">來源1：中央社</a>
+                    <a href="https://www.cw.com.tw/article/5135642" target="_blank">來源2：天下雜誌</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="timeline-item">
+        <div class="timeline-left">
+            <span class="timeline-date">2025年5月31日</span>
+            <h3 class="timeline-title">國民黨偷渡「內戰狀態」<br>修訂兩岸條例</h3>
+        </div>
+        <div class="timeline-node" onclick="window.open('https://news.pts.org.tw/article/755948', '_blank')"></div>
+        <div class="timeline-right">
+            <div class="timeline-content">
+                <div class="timeline-description">
+                    國民黨立委陳永康等人提案修訂《兩岸人民關係條例》第29條，但提案內容偷渡「兩岸內戰狀態」概念，並企圖淡化我國主權地位，引發社會各界的強烈抗議和批評。此舉被視為企圖改變兩岸法理定位的危險嘗試。
+                </div>
+                <div class="timeline-consequences">
+                    <strong>主權危機：</strong>
+                    此提案企圖從法理層面改變台灣的國際地位，將兩岸關係重新定義為「內戰」，嚴重衝擊我國主權完整性和國際認知。
+                </div>
+                <div class="timeline-sources">
+                    <a href="https://news.pts.org.tw/article/755948" target="_blank">來源1：公視新聞</a>
+                    <a href="https://www.thenewslens.com/article/254325" target="_blank">來源2：關鍵評論網</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="timeline-item">
+        <div class="timeline-left">
+            <span class="timeline-date">2025年7月</span>
+            <h3 class="timeline-title">國民黨提案架空總統<br>國防外交兩岸職權</h3>
+        </div>
+        <div class="timeline-node" onclick="window.open('https://udn.com/news/story/6656/8575967', '_blank')"></div>
+        <div class="timeline-right">
+            <div class="timeline-content">
+                <div class="timeline-description">
+                    國民黨立委陳永康提出「國家安全戰略法」草案，企圖透過立法院來架空總統的憲法職權，剝奪總統在國防、外交、兩岸關係等重要領域的決策權力，實質上要將這些攸關國家安全的重大職權轉移到立法院。
+                </div>
+                <div class="timeline-consequences">
+                    <strong>憲政危機：</strong>
+                    此提案嚴重違背憲法的權力分立原則，可能導致政府運作癱瘓，更讓國家在面對緊急狀況時無法迅速決策，嚴重危及國家安全。
+                </div>
+                <div class="timeline-sources">
+                    <a href="https://udn.com/news/story/6656/8575967" target="_blank">來源1：聯合新聞網</a>
+                    <a href="https://newtalk.tw/news/view/2025-07-03/979681" target="_blank">來源2：新頭殼</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="urgent-warning-card">
+    <div class="warning-header">
+        <h2>關鍵時刻：726/823 大罷免</h2>
+        <p class="warning-subtitle">錯過這次機會，台灣將面臨更大挑戰</p>
+    </div>
+
+    <div class="warning-content">
+        <div class="main-message">
+            <p>一旦7月26日罷免未能成功，目前因政治考量暫緩的爭議法案，將可能在未來三年內陸續通過。</p>
+        </div>
+
+        <div class="pending-laws">
+            <h4>暫緩中的重要法案包括：</h4>
+            <div class="laws-grid">
+                <div class="law-item">
+                    <div class="law-title">縮短中配身分證取得年限</div>
+                    <div class="law-consequence">讓更多中國籍人士快速取得投票權，可能改變選舉結果，同時其親屬大量來台使用健保資源</div>
+                </div>
+                <div class="law-item">
+                    <div class="law-title">廢除中配遺產繼承上限</div>
+                    <div class="law-consequence">取消200萬元繼承限制，讓中國資金透過遺產繼承大量流入台灣，規避投資審查機制</div>
+                </div>
+                <div class="law-item">
+                    <div class="law-title">刪除退將赴中限制條款</div>
+                    <div class="law-consequence">讓擁有機密情報的退役將領自由赴中，國防機密外洩風險大增，危害國家安全</div>
+                </div>
+                <div class="law-item">
+                    <div class="law-title">花東建設大型預算案</div>
+                    <div class="law-consequence">總經費兩兆的花東三法缺乏監督機制，可能淪為政治利益輸送和債留子孫的錢坑</div>
+                </div>
+                <div class="law-item">
+                    <div class="law-title">離島建設引進中資醫院</div>
+                    <div class="law-consequence">變相開放中國醫院來台設立，除了醫療品質疑慮，更可能成為情報收集和洗錢管道</div>
+                </div>
+                <div class="law-item">
+                    <div class="law-title">不在籍投票制度修正</div>
+                    <div class="law-consequence">在缺乏完善防偽機制下實施，為中共透過假證件和數位監控操縱選舉結果開後門</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="critical-reminder">
+            <h4>重要提醒</h4>
+            <p>依據現行法規，每位立委在任期內僅有一次被罷免的機會。這意味著錯過今年的罷免時機，民眾將在未來三年內失去透過罷免制衡的機會。</p>
+        </div>
+
+        <div class="call-to-action">
+            <h3>請行使您的公民權利</h3>
+            <p class="action-text"><strong>懇請您參與 726 / 823 大罷免投票，投下「同意」票，共同守護台灣民主制度。</strong></p>
+            <div class="info-link">
+                <p>詳細資訊請參考：<a href="https://news.pts.org.tw/projects/2025-recall/" target="_blank">公視大罷免資訊網站</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div style="margin-top: 40px; padding: 20px; background: rgba(255, 95, 93, 0.1); border-radius: 10px; border-left: 4px solid #FF5F5D;">
+    <p style="color: #2c3e50; margin: 0; line-height: 1.6;">
+        <strong style="color: #FF5F5D;">重要提醒：</strong>
+        本時間軸基於公開可查證的新聞報導整理，旨在幫助民眾了解事件脈絡與影響。所有資訊均附有原始來源連結，請點擊節點或來源連結進行查證。
+    </p>
+</div>

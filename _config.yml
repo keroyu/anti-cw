@@ -1,0 +1,56 @@
+# 網站基本設定
+title: 反認知作戰教育資源網
+description: 2025最完整認知作戰防禦指南！網路對立、假新聞、LINE聳動訊息都是認知作戰手法。本站集結NATO、RAND、DFRLab權威研究，深度分析俄羅斯網軍、中共滲透實戰案例，提供假訊息辨識技巧，幫助你建立資訊免疫力，守護台灣民主。
+url: https://cw.yueyuknows.com
+baseurl: ""
+lang: zh-TW
+
+# 作者資訊
+author:
+  name: 反認知作戰教育資源網
+  twitter: yueyuknows
+
+# SEO 相關
+twitter:
+  username: yueyuknows
+  card: summary_large_image
+
+# Open Graph
+og_image: /img/og-image.jpg
+
+# Google Analytics
+google_analytics: G-HDK9PF5FH1
+
+# 建置設定
+markdown: kramdown
+highlighter: rouge
+permalink: pretty
+
+# 排除不需要建置的檔案
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - .git
+  - .gitignore
+  - README.md
+  - cognitive_warfare_site.html
+  - id_rsa
+
+# 包含的檔案
+include:
+  - _pages
+
+# 預設值
+defaults:
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "default"
+
+# 外掛 (GitHub Pages 支援)
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap

@@ -1,0 +1,19 @@
+<header class="header">
+    <div id="top-anchor"></div>
+    {% if page.nav_id == 'home' or page.url == '/' %}
+    <h1><a href="{{ '/' | relative_url }}">反認知作戰教育資源網</a></h1>
+    {% else %}
+    <div class="site-title"><a href="{{ '/' | relative_url }}">反認知作戰教育資源網</a></div>
+    {% endif %}
+    <p>了解認知戰威脅，建立資訊免疫力，守護民主價值</p>
+
+    <nav id="nav-tabs-anchor" class="nav-tabs">
+        <a href="{{ '/' | relative_url }}" class="nav-tab{% if page.nav_id == 'home' %} active{% endif %}">首頁</a>
+        <a href="{{ '/translation/' | relative_url }}" class="nav-tab{% if page.nav_id == 'translation' %} active{% endif %}">重要學術資料</a>
+        <a href="{{ '/analysis/' | relative_url }}" class="nav-tab{% if page.nav_id == 'analysis' %} active{% endif %}">綜合分析</a>
+        <a href="{{ '/cards/' | relative_url }}" class="nav-tab{% if page.nav_id == 'cards' %} active{% endif %}">好懂圖卡</a>
+        <a href="{{ '/videos/' | relative_url }}" class="nav-tab{% if page.nav_id == 'videos' %} active{% endif %}">影片資源</a>
+        <a href="{{ '/books/' | relative_url }}" class="nav-tab{% if page.nav_id == 'books' %} active{% endif %}">參考書籍</a>
+        <a href="{{ '/bamian/' | relative_url }}" class="nav-tab{% if page.nav_id == 'bamian' %} active{% endif %}">2025大罷免</a>
+    </nav>
+</header>
