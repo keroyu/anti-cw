@@ -170,7 +170,10 @@
 
     // ===== 分享連結功能 =====
     window.copyShareLink = function(anchorId) {
-        const url = window.location.origin + window.location.pathname + '#' + anchorId;
+        // 如果有 anchorId 則加上 anchor，否則只複製當前頁面 URL
+        const url = anchorId
+            ? window.location.origin + window.location.pathname + '#' + anchorId
+            : window.location.origin + window.location.pathname;
         const btn = event.target.closest('.share');
 
         // 複製到剪貼簿（含 fallback）
