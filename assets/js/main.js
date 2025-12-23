@@ -171,22 +171,39 @@
     // ===== 分享連結功能 =====
     window.copyShareLink = function(anchorId) {
         const url = window.location.origin + window.location.pathname + '#' + anchorId;
+        const btn = event.target.closest('.share');
 
-        navigator.clipboard.writeText(url).then(() => {
-            const btn = event.target.closest('.share');
+        // 複製到剪貼簿（含 fallback）
+        function copyToClipboard(text) {
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                return navigator.clipboard.writeText(text);
+            }
+            // Fallback for older browsers
+            const textarea = document.createElement('textarea');
+            textarea.value = text;
+            textarea.style.position = 'fixed';
+            textarea.style.opacity = '0';
+            document.body.appendChild(textarea);
+            textarea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textarea);
+            return Promise.resolve();
+        }
+
+        // 顯示按鈕回饋
+        function showFeedback() {
             if (btn) {
                 const originalText = btn.textContent;
-                btn.textContent = '已複製！';
+                btn.textContent = '已複製!';
                 btn.classList.add('copied');
                 setTimeout(() => {
                     btn.textContent = originalText;
                     btn.classList.remove('copied');
-                }, 2000);
+                }, 1000);
             }
-        }).catch(err => {
-            console.error('複製失敗:', err);
-            prompt('請手動複製連結:', url);
-        });
+        }
+
+        copyToClipboard(url).then(showFeedback).catch(showFeedback);
     };
 
     // ===== 滾動動畫 (時間軸頁面) =====
