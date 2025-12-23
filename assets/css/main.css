@@ -826,15 +826,20 @@ p.answer-text {
     flex-wrap: wrap;
     gap: 30px;
     justify-content: space-between;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
 }
 
 /* 圖卡區塊 - 兩欄排列 */
 .card-section {
     flex: 0 0 calc(50% - 20px);
+    max-width: calc(50% - 20px);
     background: rgba(255, 255, 255, 0.95);
     border-radius: 12px;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
     overflow: hidden;
+    box-sizing: border-box;
 }
 
 .card-header {
@@ -853,6 +858,8 @@ p.answer-text {
 .card-content {
     padding: 15px;
     overflow: hidden;
+    max-width: 100%;
+    box-sizing: border-box;
 }
 
 .card-description {
@@ -862,17 +869,21 @@ p.answer-text {
     font-size: 0.95em;
     word-wrap: break-word;
     overflow-wrap: break-word;
+    white-space: normal;
+    max-width: 100%;
 }
 
 /* Slideshow 容器 */
 .slideshow-container {
     position: relative;
+    width: 100%;
     max-width: 100%;
     margin: 0 auto 15px;
     background: #f5f5f5;
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+    box-sizing: border-box;
 }
 
 .slides-wrapper {
@@ -1097,6 +1108,7 @@ p.answer-text {
 
     .card-section {
         flex: 0 0 100%;
+        max-width: 100%;
     }
 
     .card-header {
