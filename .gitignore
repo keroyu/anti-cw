@@ -1,0 +1,20 @@
+# 私鑰與敏感檔案
+id_rsa
+id_rsa.pub
+*.pem
+*.key
+
+# macOS
+.DS_Store
+**/.DS_Store
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Node (如果之後用 SSG)
+node_modules/
+.cache/
+dist/
