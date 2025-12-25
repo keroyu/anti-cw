@@ -959,6 +959,10 @@ p.answer-text {
     background: #4285F4;
 }
 
+.slide-link-btn.threads {
+    background: #000000;
+}
+
 .slide-link-btn.share {
     background: #6c757d;
     border: none;
