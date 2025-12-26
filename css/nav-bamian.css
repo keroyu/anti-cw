@@ -499,6 +499,72 @@
     transform: translateY(0);
 }
 
+/* 暫緩中的重要法案區塊 */
+.pending-laws-section {
+    margin: 50px 0 30px 0;
+    background: white;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.pending-laws-header {
+    text-align: center;
+    margin-bottom: 25px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid rgba(255, 107, 107, 0.3);
+}
+
+.pending-laws-header h2 {
+    font-size: 1.8em;
+    color: #FF3030;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.pending-laws-header p {
+    font-size: 1.1em;
+    color: #666;
+    margin: 0;
+    line-height: 1.6;
+}
+
+.laws-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 12px;
+}
+
+.law-item {
+    background: #f8f9fa;
+    padding: 16px 20px;
+    border-radius: 10px;
+    border-left: 4px solid #FF6B6B;
+    color: #2c3e50;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.law-item:hover {
+    background: rgba(255, 107, 107, 0.05);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(255, 107, 107, 0.2);
+}
+
+.law-title {
+    font-size: 1em;
+    font-weight: 600;
+    color: #FF3030;
+    margin-bottom: 8px;
+}
+
+.law-consequence {
+    font-size: 0.9em;
+    line-height: 1.5;
+    color: #495057;
+    text-align: left;
+}
+
 /* 響應式設計 */
 /* 響應式設計 - 保留時間軸的手機版 */
 @media (max-width: 768px) {
@@ -639,6 +705,37 @@
         text-decoration: none;
         border-color: #00CCBF;
         transform: translateY(-1px);
+    }
+
+    /* 暫緩法案區塊手機版 */
+    .pending-laws-section {
+        margin: 30px 0 20px 0;
+        padding: 20px;
+    }
+
+    .pending-laws-header h2 {
+        font-size: 1.5em;
+    }
+
+    .pending-laws-header p {
+        font-size: 1em;
+    }
+
+    .laws-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .law-item {
+        padding: 16px 18px;
+    }
+
+    .law-title {
+        font-size: 0.95em;
+    }
+
+    .law-consequence {
+        font-size: 0.9em;
     }
 
     /* 手機版特殊動畫效果 */
