@@ -1292,10 +1292,10 @@ p.answer-text {
 
 .slideshow-title {
     font-size: 1.3em;
-    color: #2a5a5e;
+    color: #FF5F5D;
     margin: 30px 0 10px 0;
     padding-bottom: 8px;
-    border-bottom: 2px solid #00CCBF;
+    border-bottom: 2px solid #FF5F5D;
 }
 
 .slideshow-title:first-of-type {
