@@ -13,6 +13,23 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.2'
+          bundler-cache: true
+
+      - name: Install dependencies
+        run: |
+          gem install jekyll bundler
+          bundle install --jobs 4 --retry 3 || true
+
+      - name: Build Jekyll site
+        run: |
+          bundle exec jekyll build || jekyll build
+        env:
+          JEKYLL_ENV: production
+
       - name: Install SSH key
         run: |
           mkdir -p ~/.ssh
@@ -24,5 +41,5 @@ jobs:
         run: |
           rsync -avz --delete \
             -e "ssh -i ~/.ssh/id_rsa -p ${{ secrets.A2_PORT }}" \
-            ./ \
+            ./_site/ \
             ${{ secrets.A2_USER }}@${{ secrets.A2_HOST }}:${{ secrets.A2_TARGET_DIR }}
