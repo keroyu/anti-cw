@@ -26,4 +26,3 @@ _site/
 .jekyll-metadata
 vendor/
 .bundle/
-Gemfile.lock
